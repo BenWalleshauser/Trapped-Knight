@@ -99,16 +99,13 @@ step_b = 1;
         new_val = min(v);
         
         if ismember(new_val,PrevVals) == 0     %if novel 
+            [i_new,j_new] = find(Box == new_val);
             break
         else                                   %if not, go to next val
             ind = find(v == new_val);
             v(ind) = [];
         end
 
-    end
-    
-    if ismember(new_val,PrevVals) == 0
-        [i_new,j_new] = find(Box == new_val);
     end
     
     if i_new == 0
